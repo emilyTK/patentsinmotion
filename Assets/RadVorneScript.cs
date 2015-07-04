@@ -16,7 +16,7 @@ public class RadVorneScript : MonoBehaviour {
 	void Update () {
 	
 	}
-
+	public float mAcceleration;
 	private float speed;
 	private float myRadius;
 
@@ -38,6 +38,6 @@ public class RadVorneScript : MonoBehaviour {
 	
 	public void applyRotation (float rot, float withSpeed)
 	{
-		GetComponent<Rigidbody>().AddTorque(transform.forward * rot * withSpeed);
+		GetComponent<Rigidbody>().AddTorque(transform.forward * mAcceleration * rot * withSpeed);
 	}
 }

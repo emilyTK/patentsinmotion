@@ -2,11 +2,12 @@
 using System.Collections;
 
 public class RadHintenScript : MonoBehaviour {
-	
+
+
+
 	// Use this for initialization
 	void Start () {
 		this.myRadius = GetComponent<SphereCollider>().radius;
-		
 		this.speed = 50 * this.myRadius;
 		
 		// TODO calculate transmission based on radi
@@ -16,7 +17,8 @@ public class RadHintenScript : MonoBehaviour {
 	void Update () {
 		
 	}
-	
+		
+	public float mAcceleration;
 	private float speed;
 	private float myRadius;
 	
@@ -38,6 +40,6 @@ public class RadHintenScript : MonoBehaviour {
 	
 	public void applyRotation (float rot, float withSpeed)
 	{
-		GetComponent<Rigidbody>().AddTorque(transform.forward * rot * withSpeed);
+		GetComponent<Rigidbody>().AddTorque(transform.forward * mAcceleration * rot * withSpeed);
 	}
 }
